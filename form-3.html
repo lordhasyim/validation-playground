@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form id="test_form" method="POST" action="form-3.html">
+            <p>First Name: <input type="text" size="32" required name="firstname"></p>
+            <p>Last Name: <input type="text" size="32" required name="lastname"></p>
+            <p><input type="submit" name="submit_button">
+            <input id="reset_button" type="button" value="Reset Button"></p>
+    </form>
+<script>
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+        this.querySelector('input[type="submit"]')
+            .setAttribute('disabled', 'disabled');
+    }, false)   
+</script>
+</body>
+</html>
