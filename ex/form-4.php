@@ -27,7 +27,7 @@
         if ($_SESSION['submit_token'] != $_POST['submit_post_token']) {
            echo "data siap disimpan";
            //save data
-           //unset($_SESSION['submit_token']);
+           unset($_SESSION['submit_token']);
 
         } else if($_SESSION['submit_token'] === $submit_token) {
             echo "data tidak bisa disimpan, nilai token sama";
