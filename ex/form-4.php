@@ -10,7 +10,7 @@
     <body>
     <?php
 
-        session_start();
+        session_destroy();
         $rand = md5(uniqid(rand(), TRUE));
         $_SESSION['submit_token'] = bin2hex(random_bytes(32));
         echo "<br />";
@@ -18,15 +18,17 @@
         echo "<br />";
     
         
-        $firstName = $_POST['firstname'];
-        $lastName = $_POST['lastname'];
+        $name = $_POST['name'];
         $submit_token = $_POST['submit_post_token'];
 
-        echo "submit token : " . $submit_token;
+        echo "submit token post : " . $submit_token;
         echo "<br />";
 
         if ($_SESSION['submit_token'] != $_POST['submit_post_token']) {
+           echo "data siap disimpan";
            //save data
+           //unset($_SESSION['submit_token']);
+
         } else if($_SESSION['submit_token'] === $submit_token) {
             echo "data tidak bisa disimpan, nilai token sama";
         }
