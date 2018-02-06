@@ -10,7 +10,7 @@
     <body>
     <?php
 
-        session_destroy();
+        session_start();
         $rand = md5(uniqid(rand(), TRUE));
         $_SESSION['submit_token'] = bin2hex(random_bytes(32));
         echo "<br />";
